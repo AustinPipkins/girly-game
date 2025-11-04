@@ -8,7 +8,7 @@ set -e  # Stop on first error
 WIN_CXX=g++
 
 # Flags
-WIN_FLAGS="-lws2_32 -static -pthread"
+WIN_FLAGS="-lws2_32 -static"
 
 # Source files
 SERVER_SRC="src/server.cpp"
@@ -20,6 +20,9 @@ CLIENT_WIN="./client-win.exe"
 
 echo "🧹 Cleaning old builds..."
 rm -f "$SERVER_WIN" "$CLIENT_WIN"
+
+dos2unix src/server.cpp src/client.cpp
+
 
 # Check if g++ exists
 if ! command -v $WIN_CXX &> /dev/null; then
