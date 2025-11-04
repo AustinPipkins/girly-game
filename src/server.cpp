@@ -8,6 +8,7 @@
 
 
 #ifdef _WIN32
+    #include <windows.h>
     #include <winsock2.h>
     #include <WS2tcpip.h>
     #pragma comment(lib, "ws2_32.lib")
