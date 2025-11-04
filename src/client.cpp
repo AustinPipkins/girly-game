@@ -1,8 +1,3 @@
-#include <iostream>
-#include <string>
-#include <thread>
-#include <cstring>
-
 #ifdef _WIN32
     #include <windows.h>
     #include <winsock2.h>
@@ -18,6 +13,11 @@
     #define closesocket(s) close(s)
     typedef int SOCKET;
 #endif
+
+#include <iostream>
+#include <string>
+#include <thread>
+#include <cstring>
 
 void initSockets() {
 #ifdef _WIN32

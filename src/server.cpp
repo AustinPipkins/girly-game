@@ -1,12 +1,3 @@
-#include <iostream>
-#include <string>
-#include <thread>
-#include <vector>
-#include <mutex>
-#include <cstring>
-#include <algorithm>
-
-
 #ifdef _WIN32
     #include <windows.h>
     #include <winsock2.h>
@@ -22,6 +13,15 @@
     #define closesocket(s) close(s)
     typedef int SOCKET;
 #endif
+
+#include <iostream>
+#include <string>
+#include <thread>
+#include <vector>
+#include <mutex>
+#include <cstring>
+#include <algorithm>
+
 
 std::mutex clientsMutex;
 std::vector<SOCKET> clients;
