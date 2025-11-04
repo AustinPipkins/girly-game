@@ -33,8 +33,8 @@ if ! command -v $WIN_CXX &> /dev/null; then
 fi
 
 echo "🪟 Building Windows executables..."
-$WIN_CXX -v -Wall $SERVER_SRC -o $SERVER_WIN $WIN_FLAGS
-$WIN_CXX -v -Wall $CLIENT_SRC -o $CLIENT_WIN $WIN_FLAGS
+$WIN_CXX -v -Wall -U_REENTRANT "$SERVER_SRC" -o "$SERVER_WIN" $WIN_FLAGS
+$WIN_CXX -v -Wall -U_REENTRANT "$CLIENT_SRC" -o "$CLIENT_WIN" $WIN_FLAGS
 echo "✅ Windows builds complete!"
 
 echo ""
